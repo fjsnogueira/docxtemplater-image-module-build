@@ -1,0 +1,24 @@
+{
+  "name": "docxtemplater-image-module",
+  "homepage": "https://github.com/open-xml-templating/docxtemplater-image-module",
+  "authors": [
+    "Edgar HIPP <hipp.edg@gmail.com>"
+  ],
+  "description": "A docxtemplater module to generate images",
+  "main": "build/docxtemplater-latest.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "docx",
+    "image generatio"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
