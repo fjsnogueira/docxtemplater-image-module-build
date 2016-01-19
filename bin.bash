@@ -1,5 +1,12 @@
 #/usr/bin/bash
 
+npm install -g uglify-js
+
+uglifyversion="$(uglifyjs --version)"
+
+echo "using : $uglifyversion"
+
+[[ "$uglifyversion" =~ "uglify-js 2." ]] || { echo "you need version 2.x of uglifyjs"; exit 1; }
 mkdir build -p
 
 if [ ! -d src ]; then
@@ -27,9 +34,13 @@ do
 	npm test
 	result=$?
 	cd ..
+	echo  "result : $result"
 	if [ "$result" == "0" ]; then
+		echo "running browserify"
 		browserify -r ./src/js/index.js -s ImageModule > "$filename"
-		uglifyjs "$filename" > "$minfilename"
+		echo "running uglify"
+		uglifyjs  "$filename" > "$minfilename" --verbose --ascii-only
+		echo "runned uglify"
 	fi
 	cd src
 done
