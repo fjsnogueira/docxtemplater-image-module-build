@@ -1,5 +1,8 @@
 #/usr/bin/bash
 
+set -e
+set -u
+
 npm install -g uglify-js
 
 uglifyversion="$(uglifyjs --version)"
@@ -13,6 +16,7 @@ if [ ! -d src ]; then
 	git clone https://github.com/open-xml-templating/docxtemplater-image-module.git src
 else
 	cd src
+	git checkout master
 	git pull
 	cd ..
 fi
@@ -21,6 +25,8 @@ cd src
 
 for tag in $(git tag)
 do
+	[ "$tag" = "v0.1.0" ] && continue
+	[ "$tag" = "v0.3.4" ] && continue
 	cd ..
 	filename="$(pwd)""/build/docxtemplater-image-module.""$tag"".js"
 	minfilename="$(pwd)""/build/docxtemplater-image-module.""$tag"".min.js"
@@ -30,7 +36,7 @@ do
 	echo "processing $tag"
 	git checkout "$tag"
 	npm install
-	gulp allCoffee
+	[ -f "gulpfile.js" ] && gulp allCoffee
 	npm test
 	result=$?
 	cd ..
