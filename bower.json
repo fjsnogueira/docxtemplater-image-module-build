@@ -1,10 +1,11 @@
 {
-  "name": "docxtemplater-image-module",
-  "homepage": "https://github.com/open-xml-templating/docxtemplater-image-module",
+  "name": "docxtemplater-image-module-build-test",
+  "homepage": "https://github.com/fjsnogueira/docxtemplater-image-module-build-test",
   "authors": [
-    "Edgar HIPP <hipp.edg@gmail.com>"
+    "Edgar HIPP <hipp.edg@gmail.com>",
+    "Fernando Nogueira <fjsnogueira@gmail.com>"
   ],
-  "description": "A docxtemplater module to generate images",
+  "description": "A docxtemplater module to generate images, with the bower.json changed",
   "main": "build/docxtemplater-latest.js",
   "moduleType": [
     "globals"
