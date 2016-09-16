@@ -6,7 +6,7 @@
     "Fernando Nogueira <fjsnogueira@gmail.com>"
   ],
   "description": "A docxtemplater module to generate images, with the bower.json changed",
-  "main": "build/docxtemplater-latest.js",
+  "main": "build/docxtemplater-image-module-latest.js",
   "moduleType": [
     "globals"
   ],
